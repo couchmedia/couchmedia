@@ -1,0 +1,4 @@
+name: Dummy MP3 Tag Sync
+filename: dummy.mp3
+classname: SyncPluginDummyMP3
+mimetypes: ["audio/mpeg", "audio/MPA", "audio/mpa-robust"]
