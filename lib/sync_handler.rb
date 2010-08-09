@@ -57,23 +57,23 @@ class SyncHandler
 
     return success
   end
-  def syncFileToDoc(file, document)
+  def syncFileToDocs(file, documents)
     mimetype = Magic.guess_file_mime_type(file)
     available_plugins = @sync_plugins[mimetype]
-    new_doc = nil
+    new_docs = nil
 
     available_plugins.each do |plugin|
       begin
-        new_doc = Kernel.const_get(plugin[:classname]).syncFileToDoc(document, file)
-        break if new_doc
+        new_docs = Kernel.const_get(plugin[:classname]).syncFileToDocs(file, documents)
+        break if new_docs
       rescue Exception => e 
-        puts "[SyncHandler] plugin #{plugin['name']} failed to sync #{file} to its document: #{e.message}"
+        puts "[SyncHandler] plugin #{plugin['name']} failed to sync #{file} to its documents: #{e.message}"
       end
     end
 
-    puts "[SyncHandler] no plugin was able to sync #{file}, giving up" if !new_doc and available_plugins.size > 0
-    puts "[SyncHandler] no plguins to sync #{file}, giving up" if !new_doc and available_plugins.size == 0
+    puts "[SyncHandler] no plugin was able to sync #{file}, giving up" if !new_docs and available_plugins.size > 0
+    puts "[SyncHandler] no plguins to sync #{file}, giving up" if !new_docs and available_plugins.size == 0
 
-    return new_doc
+    return new_docs
   end
 end
