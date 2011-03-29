@@ -28,7 +28,8 @@ class CouchMedia
         @modules[manifest['rack']['namespace']] = {
           namespace: manifest['rack']['namespace'],
           classname: manifest['rack']['application'],
-          filepath: "#{File.join(path, manifest['rack']['application'].underscore)}.rb"
+          filepath: "#{File.join(path, manifest['rack']['application'].underscore)}.rb",
+          needs_init: (manifest['rack']['needs_init'] ? true : false )
         }
       end      
     end

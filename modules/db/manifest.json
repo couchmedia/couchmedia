@@ -1,0 +1,9 @@
+{
+    "rack":
+    {
+        "namespace" : "db", 
+        "application": "DatabaseApplication",
+        "needs_init": true
+    },
+    "config" : {}
+}
