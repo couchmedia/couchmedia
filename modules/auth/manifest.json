@@ -1,0 +1,11 @@
+{
+    "rack" :
+    {
+        "application" : "AuthApplication",
+        "namespace" : "auth"
+    },
+    "config" :
+    {
+        
+    }
+}

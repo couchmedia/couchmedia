@@ -1,0 +1,12 @@
+{
+    "rack" :
+    {
+        "application": "SyncApplication",
+        "namespace": "sync"
+    },
+    "config" :
+    {
+        "manage-files" : true,
+        "managed-root" : "/home/arthur/couchmedia"
+    }
+}

@@ -1,0 +1,11 @@
+{
+    "rack": 
+    {
+        "application": "CoreApplication",
+        "namespace": "core"
+    },
+    "config" :
+    {
+
+    }
+}
