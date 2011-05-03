@@ -2,6 +2,9 @@ $: << "."
 $: << "lib"
 
 require 'couchmedia'
+require 'couchmedia/authorization'
+
+use CouchAuthorization
 
 CouchMedia.modules.each_value do |mod|
   require mod[:filepath]
